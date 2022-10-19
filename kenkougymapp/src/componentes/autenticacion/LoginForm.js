@@ -24,9 +24,9 @@ const LoginForm = () => {
                 </Form.Group>
                 
                 <Form.Group className='mb-3'>
-                  <Button type='submit' variant='primary'>Login</Button>
+                  <Button type='submit' variant='primary' href="/menu">Login</Button>
                 </Form.Group>
-                <Form.Text>¿No tienes cuenta? <Link>Registrate</Link></Form.Text>
+                <Form.Text>¿No tienes cuenta? <Link to="/signup">Registrate</Link></Form.Text>
               </Form>
             </Col>
           </Row>  
