@@ -12,6 +12,8 @@ import Ingredients from './componentes/recipes/Ingredients';
 import Lunch from './componentes/recipes/Lunch';
 import Recipes from './componentes/recipes/Recipes';
 
+import Rutines from './componentes/rutines/Rutines';
+
 import Layout from './componentes/layout/Layout';
 import Index from './paginas/Index';
 
@@ -30,6 +32,7 @@ function App() {
         <Route path='/lunch' element={<Lunch/>}></Route>
         <Route path='/recipes' element={<Recipes/>}></Route>
 
+        <Route path='/rutines' element={<Rutines/>}></Route>
 
         <Route path='/index' element={<Index/>}></Route>
 
