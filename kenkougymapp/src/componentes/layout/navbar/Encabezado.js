@@ -10,7 +10,7 @@ const Encabezado = () => {
                     <Nav className="me-auto">
                         <Nav.Link href="/menu">Inicio</Nav.Link>
                         <Nav.Link href="/recipes">Recetas</Nav.Link>
-                        <Nav.Link href="/">Rutinas</Nav.Link>
+                        <Nav.Link href="/rutines">Rutinas</Nav.Link>
                         <Nav.Link href="/">Objetivos Personales</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
