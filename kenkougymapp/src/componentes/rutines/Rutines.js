@@ -2,6 +2,7 @@ import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import cub1 from '../imagenes/menu/cubo1.jpg';
 import React, { useState } from "react";
+import excercisesxmusclesData from '../excercises/dataExcercisesxMuscle';
 import recipesData from "../rutines/dataRutines";
 import rutinesData from '../rutines/dataRutines';
 
@@ -60,6 +61,41 @@ const Rutines = () => {
                     </Table>
                 </Row>
             </Container>
+
+            
+            <Container fluid='lg'>
+                <Row>
+                    <Table striped bordered hover>
+                        <thead className="thead-dark">
+                            <tr>
+                                <th scope="col">Ejercicio</th>
+                                <th className="col-4">Imagen</th>
+                                <th className="col">Músculo</th>
+                                
+                            </tr>
+                        </thead>
+
+                        {excercisesxmusclesData.cardExcercisesxMuscles.map((item, index) => {
+                            return (
+
+                                <tbody>
+                                    <tr key={index}>
+                                        <td> {item.idmusculo} </td>
+                                        <td>
+                                            <img src={item.idimagen} alt="Ejercicio" class="img-thumbnail"
+                                                width="70%" />
+                                        </td>
+                                       
+                                        <td> {item.idejercicio} </td>
+                                        
+                                    </tr>
+                                </tbody>
+                            )
+                        })}     
+                    </Table>
+                </Row>
+            </Container>
+
         </Container>
     );
 };
