@@ -1,15 +1,15 @@
-import Vegetarianos from '../imagenes/recipes/vegetarianos.jpg';
-import Ovolactovegetariano from '../imagenes/recipes/ovolactovegetarianismo.jpg'
-import Apivegetarianos from '../imagenes/recipes/Apivegetarianos.jpg'
-import Pescetariano from '../imagenes/recipes/pescetariano.jpg'
-import Pollotariano from '../imagenes/recipes/Pollotariano.jpg'
-import Flexitarianos from '../imagenes/recipes/Flexitarianos.jpg'
-import Veganos from '../imagenes/recipes/Veganos.jpg'
-import Crudiveganos from '../imagenes/recipes/Crudiveganos.jpg'
-import Frugivoristas from '../imagenes/recipes/Frugivoristas.jpg'
-import Paleo from '../imagenes/recipes/Paleo.jpg'
-import  DietaSátvica from '../imagenes/recipes/DietaSátvica.jpeg'
-import  DietaMacrobiótica from '../imagenes/recipes/DietaMacrobiótica.jpg'
+import Vegetarianos from '../../imagenes/recipes/vegetarianos.jpg';
+import Ovolactovegetariano from '../../imagenes/recipes/ovolactovegetarianismo.jpg'
+import Apivegetarianos from '../../imagenes/recipes/Apivegetarianos.jpg'
+import Pescetariano from '../../imagenes/recipes/pescetariano.jpg'
+import Pollotariano from '../../imagenes/recipes/Pollotariano.jpg'
+import Flexitarianos from '../../imagenes/recipes/Flexitarianos.jpg'
+import Veganos from '../../imagenes/recipes/Veganos.jpg'
+import Crudiveganos from '../../imagenes/recipes/Crudiveganos.jpg'
+import Frugivoristas from '../../imagenes/recipes/Frugivoristas.jpg'
+import Paleo from '../../imagenes/recipes/Paleo.jpg'
+import  DietaSátvica from '../../imagenes/recipes/DietaSátvica.jpeg'
+import  DietaMacrobiótica from '../../imagenes/recipes/DietaMacrobiótica.jpg'
 
 const recipesData = {
     cardRecipes: [
