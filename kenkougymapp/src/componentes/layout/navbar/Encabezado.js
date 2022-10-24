@@ -1,10 +1,8 @@
 import { Container, Navbar, Nav } from 'react-bootstrap';
 
 const Encabezado = () => {
-
-    return(
-        <Navbar bg="dark" variant='dark' expand="lg">
-
+    return (
+        <Navbar bg="dark" variant='dark' expand="lg" className='mb-3'>
             <Container>
                 <Navbar.Brand>Kenkou Gym</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

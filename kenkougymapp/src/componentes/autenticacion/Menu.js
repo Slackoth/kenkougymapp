@@ -10,7 +10,7 @@ import cub3 from '../imagenes/menu/cubo3.jpg';
 import basic from '../imagenes/Suscripcion/basic.jpg';
 import gold from '../imagenes/Suscripcion/gold2.jpg';
 
-const SignUp = () => {
+const Menu = () => {
     return (
         <Container fluid='lg'>
             <Carousel>
@@ -110,4 +110,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default Menu;

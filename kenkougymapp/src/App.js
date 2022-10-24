@@ -11,16 +11,15 @@ import Dinner from './componentes/recipes/Dinner';
 import Ingredients from './componentes/recipes/Ingredients';
 import Lunch from './componentes/recipes/Lunch';
 import Recipes from './componentes/recipes/Recipes';
+import RecipesSearch from './componentes/recipes/RecipesSearch';
 
 import Layout from './componentes/layout/Layout';
-import Index from './paginas/Index';
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path='/login' element={<LoginForm/>}></Route>
-
         <Route path='/menu' element={<Menu/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
         
@@ -29,9 +28,7 @@ function App() {
         <Route path='/ingredients' element={<Ingredients/>}></Route>
         <Route path='/lunch' element={<Lunch/>}></Route>
         <Route path='/recipes' element={<Recipes/>}></Route>
-
-
-        <Route path='/index' element={<Index/>}></Route>
+        <Route path='/searchRecipe' element={<RecipesSearch/>}></Route>
 
       </Routes>
     </Layout>
