@@ -1,4 +1,4 @@
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import {Container, Row } from 'react-bootstrap';
 import data from './data/dataIngredients';
 
 import React, { useState, useEffect } from "react";
