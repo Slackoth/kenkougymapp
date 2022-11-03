@@ -1,4 +1,6 @@
-import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row, Table, Carousel } from 'react-bootstrap';
+
+
 import cub2 from '../imagenes/menu/cubo1.jpg';
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
@@ -26,6 +28,10 @@ const RutinesSearch = () => {
 
 
     return (
+
+
+
+        
         <Container fluid='lg'>
             <Row className="justify-content-center">
                 <Col md={3} className="text-center text-md">
@@ -37,14 +43,15 @@ const RutinesSearch = () => {
                 <Row>
                     
 
-                    <Table>
-                        <thead className="thead-dark">
+                    <Table striped bordered hover responsive>
+                        <thead >
                             <tr>
                                 <th scope="col">Músculo</th>
                                 <th scope="col">Ejercicio</th>
                                 <th className="col-4">Imagen</th>
                                 <th className="col">Series</th>
                                 <th className="col">Repeticiones</th>
+                                <th className="col">Tiempo recomendado</th>
                                 <th className="col">Video Tutorial</th>
                                 
                             </tr>
@@ -71,8 +78,16 @@ const RutinesSearch = () => {
                                         <td>
                                             {item.repeticiones}
                                         </td>
+                                        <td >
+                                            <p >
+                                                {item.tiempo_recomendado}
+                                            </p>
+                                        </td>
                                         <td>
-                                            {item.url}
+                                            <a href={item.url} target="_blank" rel="noreferrer">
+                                                <button type="button" class="btn btn-primary">Ver</button>
+                                            </a>
+                                            
                                         </td>
                                         
                                     </tr>
