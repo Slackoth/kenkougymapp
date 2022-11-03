@@ -1,20 +1,19 @@
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap';
-import cub2 from '../imagenes/menu/cubo2.jpg';
+import cub2 from '../imagenes/menu/cubo1.jpg';
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import ModelTiming from "../recipes/modalTiming";
+import cub3 from "../imagenes/rutines/predicador.jpg";
 
-const RecipesSearch = () => {
 
-    const [model, setModel] = useState(false);
+const RutinesSearch = () => {
+
     const [tempData, setTempData] = useState([]);
-    const [tempName, setName] = useState([]);
 
     useEffect(() => {
         //Axios.get()
         const getData = async () => {
 
-            const url = "http://localhost:8080/kenkou-gym-api/nutricion/ingredientes";
+            const url = "http://localhost:8080/kenkou-gym-api/ejercicios/ejercicioPorMusculoAll";
             const { data } = await Axios.get(url);
             console.log(data);
 
@@ -30,7 +29,7 @@ const RecipesSearch = () => {
         <Container fluid='lg'>
             <Row className="justify-content-center">
                 <Col md={3} className="text-center text-md">
-                    <img src={cub2} width='250px' height='150px' alt="..." />
+                    <img src="https://drive.google.com/uc?export=view&id=1ah7hvtjuZ6XB-iHLIzR59HEN4BOlJTGr"  width='250px' height='150px'  />
                 </Col>
             </Row>
 
@@ -41,13 +40,13 @@ const RecipesSearch = () => {
                     <Table>
                         <thead className="thead-dark">
                             <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th className="col">Calorias</th>
-                                <th className="col">Proteinas</th>
-                                <th className="col">Grasa Saturada</th>
-                                <th className="col">Fibra</th>
-                                <th className="col">Carbohidratos</th>
+                                <th scope="col">Músculo</th>
+                                <th scope="col">Ejercicio</th>
+                                <th className="col-4">Imagen</th>
+                                <th className="col">Series</th>
+                                <th className="col">Repeticiones</th>
+                                <th className="col">Video Tutorial</th>
+                                
                             </tr>
                         </thead>
                         {tempData.map((item, index) => {
@@ -55,26 +54,27 @@ const RecipesSearch = () => {
                                 <tbody>
                                     <tr key={index}>
                                         <td>
-                                            {item.id}
+                                            {item.musculo?.nombre}
                                         </td>
                                         <td>
-                                            {item.nombreAlimento}
+                                            {item.ejercicio?.nombre}
                                         </td>
-                                        <td> {item.calorias} </td>
+                                        <td> 
+                                            <img src={item.imagenEjercicio?.imagen} alt="Ejercicio" class="img-thumbnail"
+                                                width="70%"/>
+
+                                        </td>
+                                               
                                         <td>
-                                            {item.proteinas}
+                                            {item.series}
+                                        </td>
+                                        <td>
+                                            {item.repeticiones}
+                                        </td>
+                                        <td>
+                                            {item.url}
                                         </td>
                                         
-                                        
-                                        <td>
-                                            {item.grasaSaturada}
-                                        </td>
-                                        <td>
-                                            {item.fibra}
-                                        </td>
-                                        <td>
-                                            {item.carbohidratos}
-                                        </td>
                                     </tr>
                                 </tbody>
 
@@ -85,11 +85,8 @@ const RecipesSearch = () => {
                 </Row>
             </Container>
 
-            {
-                model === true ? <ModelTiming img={tempData[1]} nombre={tempData[2]} desc={tempData[3]} hide={() => setModel(false)} /> : ''
-            }
         </Container>
     );
 };
 
-export default RecipesSearch;
+export default RutinesSearch;
