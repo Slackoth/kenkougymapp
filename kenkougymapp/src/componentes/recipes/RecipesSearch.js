@@ -64,6 +64,8 @@ const RecipesSearch = () => {
                                         <td>
                                             {item.proteinas}
                                         </td>
+                                        
+                                        
                                         <td>
                                             {item.grasaSaturada}
                                         </td>

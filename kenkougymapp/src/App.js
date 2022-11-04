@@ -14,6 +14,7 @@ import Recipes from './componentes/recipes/Recipes';
 import RecipesSearch from './componentes/recipes/RecipesSearch';
 
 import Rutines from './componentes/rutines/Rutines';
+import RutinesSearch from './componentes/rutines/RutinesSearch';
 
 import Layout from './componentes/layout/Layout';
 
@@ -33,6 +34,7 @@ function App() {
         <Route path='/searchRecipe' element={<RecipesSearch/>}></Route>
 
         <Route path='/rutines' element={<Rutines/>}></Route>
+        <Route path='/searchRutine' element={<RutinesSearch/>}></Route>
 
       </Routes>
     </Layout>
