@@ -15,6 +15,7 @@ import RecipesSearch from './componentes/recipes/RecipesSearch';
 
 import Rutines from './componentes/rutines/Rutines';
 import RutinesSearch from './componentes/rutines/RutinesSearch';
+import RecipesKenkou from './componentes/recipes/RecipesKenkou';
 
 import Layout from './componentes/layout/Layout';
 
@@ -35,6 +36,7 @@ function App() {
 
         <Route path='/rutines' element={<Rutines/>}></Route>
         <Route path='/searchRutine' element={<RutinesSearch/>}></Route>
+        <Route path='/recipesKenkou' element={<RecipesKenkou/>}></Route>
 
       </Routes>
     </Layout>
