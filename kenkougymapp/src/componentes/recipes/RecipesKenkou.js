@@ -23,7 +23,7 @@ const RecipesKenkou = () => {
 
     }, []);
 
-
+    //const item = tempData.map(i => console.log(i))
 
     return (
         <Container fluid='lg'>
@@ -43,11 +43,11 @@ const RecipesKenkou = () => {
                                 <th scope="col">ID</th>
                                 <th className="col">Nombre</th>
                                 <th className="co">Tutorial</th>
-                                <th className="col-8">Instrucciones</th>
-                                <th className='col-2'>Objetivo</th>
-                                <th className='col-2'>Tiempo</th>
-                                <th className='col'>Ingredientes</th>
-                                <th className='col'>Calorias</th>
+                                <th className="col-7">Instrucciones</th>
+                                <th className='col'>Objetivo</th>
+                                <th className='col'>Tiempo</th>
+                                <th className='col-3'>Ingredientes</th>
+                                <th className='col-3'>Tabla Nutricional</th>
                             </tr>
                         </thead>
                         {tempData.map((item, index) => {
@@ -78,10 +78,29 @@ const RecipesKenkou = () => {
                                             {item.tiempoComida.nombre}
                                         </td>
                                         <td>
-                                            
+                                            {item.cantidadDeIngrediente.map(n => {
+                                                return <li> {n.ingrediente.nombreAlimento} </li>;
+                                            })}
                                         </td>
                                         <td>
-                                            {item.tablanutricional.calorias}
+                                            <li>
+                                                Calorias: {item.tablanutricional.calorias}
+                                            </li>
+                                            <li>
+                                                Proteinas: {item.tablanutricional.proteinas}
+                                            </li>
+                                            <li>
+                                                Carbohidratos: {item.tablanutricional.carbohidratos}
+                                            </li>
+                                            <li>
+                                                Fibra: {item.tablanutricional.fibra}
+                                            </li>
+                                            <li>
+                                                Grasas: {item.tablanutricional.grasas}
+                                            </li>
+                                            <li>
+                                                Grasa Saturada: {item.tablanutricional.grasaSaturada}
+                                            </li>
                                         </td>
                                     </tr>
                                 </tbody>
