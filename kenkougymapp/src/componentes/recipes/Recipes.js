@@ -28,10 +28,16 @@ const Recipes = () => {
                         Alimentos Cotidianos
                     </Button>
                     <Button
-                        variant='danger'
+                        variant='outline-danger'
                         size='sm'
                         href='/searchRecipe'>
                         Ingredientes de Nuestras Recetas
+                    </Button>
+                    <Button
+                        variant='outline-success'
+                        size='sm'
+                        href='/recipesKenkou'>
+                        Ver Recetario
                     </Button>
                 </Col>
             </Row>
