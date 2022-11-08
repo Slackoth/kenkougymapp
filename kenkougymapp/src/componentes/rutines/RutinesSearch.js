@@ -15,7 +15,7 @@ const RutinesSearch = () => {
         //Axios.get()
         const getData = async () => {
 
-            const url = "http://localhost:8080/kenkou-gym-api/ejercicios/ejercicioPorMusculoAll";
+            const url = "http://localhost:8080/kenkou-gym-api/ejercicios/ejercicioPorRutinaPorId?idRutina=1";
             const { data } = await Axios.get(url);
             console.log(data);
 
@@ -61,30 +61,30 @@ const RutinesSearch = () => {
                                 <tbody>
                                     <tr key={index}>
                                         <td>
-                                            {item.musculo?.nombre}
+                                            {item.ejercicioPorMusculo.musculo?.nombre}
                                         </td>
                                         <td>
-                                            {item.ejercicio?.nombre}
+                                            {item.ejercicioPorMusculo.ejercicio?.nombre}
                                         </td>
                                         <td> 
-                                            <img src={item.imagenEjercicio?.imagen} alt="Ejercicio" class="img-thumbnail"
+                                            <img src={item.ejercicioPorMusculo.imagenEjercicio?.imagen} alt="Ejercicio" class="img-thumbnail"
                                                 width="70%"/>
 
                                         </td>
                                                
                                         <td>
-                                            {item.series}
+                                            {item.ejercicioPorMusculo.series}
                                         </td>
                                         <td>
-                                            {item.repeticiones}
+                                            {item.ejercicioPorMusculo.repeticiones}
                                         </td>
                                         <td >
                                             <p >
-                                                {item.tiempo_recomendado}
+                                                {item.ejercicioPorMusculo.tiempo_recomendado}
                                             </p>
                                         </td>
                                         <td>
-                                            <a href={item.url} target="_blank" rel="noreferrer">
+                                            <a href={item.ejercicioPorMusculo.url} target="_blank" rel="noreferrer">
                                                 <button type="button" class="btn btn-primary">Ver</button>
                                             </a>
                                             
