@@ -12,9 +12,15 @@ import Ingredients from './componentes/recipes/Ingredients';
 import Lunch from './componentes/recipes/Lunch';
 import Recipes from './componentes/recipes/Recipes';
 import RecipesSearch from './componentes/recipes/RecipesSearch';
-
+import React from "react";
+import { MDBContainer } from "mdbreact";
+import { Line } from "react-chartjs-2";
 import Rutines from './componentes/rutines/Rutines';
+import Progreso from './componentes/progreso/progreso';
 import RutinesSearch from './componentes/rutines/RutinesSearch';
+import RutinesSearch2 from './componentes/rutines/RutinesSearch2';
+
+
 import RecipesKenkou from './componentes/recipes/RecipesKenkou';
 
 import Layout from './componentes/layout/Layout';
@@ -35,8 +41,6 @@ function App() {
         <Route path='/searchRecipe' element={<RecipesSearch/>}></Route>
 
         <Route path='/rutines' element={<Rutines/>}></Route>
-        <Route path='/searchRutine' element={<RutinesSearch/>}></Route>
-        <Route path='/recipesKenkou' element={<RecipesKenkou/>}></Route>
 
       </Routes>
     </Layout>

@@ -7,7 +7,7 @@ import Axios from "axios";
 import cub3 from "../imagenes/rutines/predicador.jpg";
 
 
-const RutinesSearch = () => {
+const RutinesSearch2 = () => {
 
     const [tempData, setTempData] = useState([]);
 
@@ -15,7 +15,7 @@ const RutinesSearch = () => {
         //Axios.get()
         const getData = async () => {
 
-            const url = "http://localhost:8080/kenkou-gym-api/ejercicios/ejercicioPorRutinaPorId?idRutina=1";
+            const url = "http://localhost:8080/kenkou-gym-api/ejercicios/ejercicioPorRutinaPorId?idRutina=2";
             const { data } = await Axios.get(url);
             console.log(data);
 
@@ -104,4 +104,4 @@ const RutinesSearch = () => {
     );
 };
 
-export default RutinesSearch;
+export default RutinesSearch2;
