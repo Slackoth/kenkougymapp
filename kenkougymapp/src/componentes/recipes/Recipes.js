@@ -1,4 +1,4 @@
-import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap';
+import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 import cub2 from '../imagenes/menu/cubo2.jpg';
 import React, { useState } from "react";
 import recipesData from "../recipes/data/dataRecipes";
@@ -28,10 +28,16 @@ const Recipes = () => {
                         Alimentos Cotidianos
                     </Button>
                     <Button
-                        variant='danger'
+                        variant='outline-danger'
                         size='sm'
                         href='/searchRecipe'>
                         Ingredientes de Nuestras Recetas
+                    </Button>
+                    <Button
+                        variant='outline-success'
+                        size='sm'
+                        href='/recipesKenkou'>
+                        Ver Recetario
                     </Button>
                 </Col>
             </Row>
