@@ -1,0 +1,107 @@
+import { Button, Col, Container, Form, Row, Table, Carousel } from 'react-bootstrap';
+
+
+import cub2 from '../imagenes/menu/cubo1.jpg';
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import cub3 from "../imagenes/rutines/predicador.jpg";
+
+
+const RutinesSearch2 = () => {
+
+    const [tempData, setTempData] = useState([]);
+
+    useEffect(() => {
+        //Axios.get()
+        const getData = async () => {
+
+            const url = "http://localhost:8080/kenkou-gym-api/ejercicios/ejercicioPorRutinaPorId?idRutina=2";
+            const { data } = await Axios.get(url);
+            console.log(data);
+
+            setTempData(data);
+        }
+        getData();
+        
+    }, []);
+
+
+
+    return (
+
+
+
+        
+        <Container fluid='lg'>
+            <Row className="justify-content-center">
+                <Col md={3} className="text-center text-md">
+                    <img src="https://drive.google.com/uc?export=view&id=1ah7hvtjuZ6XB-iHLIzR59HEN4BOlJTGr"  width='250px' height='150px'  />
+                </Col>
+            </Row>
+
+            <Container fluid='lg'>
+                <Row>
+                    
+
+                    <Table striped bordered hover responsive>
+                        <thead >
+                            <tr>
+                                <th scope="col">Músculo</th>
+                                <th scope="col">Ejercicio</th>
+                                <th className="col-4">Imagen</th>
+                                <th className="col">Series</th>
+                                <th className="col">Repeticiones</th>
+                                <th className="col">Tiempo recomendado</th>
+                                <th className="col">Video Tutorial</th>
+                                
+                            </tr>
+                        </thead>
+                        {tempData.map((item, index) => {
+                            return (
+                                <tbody>
+                                    <tr key={index}>
+                                        <td>
+                                            {item.ejercicioPorMusculo.musculo?.nombre}
+                                        </td>
+                                        <td>
+                                            {item.ejercicioPorMusculo.ejercicio?.nombre}
+                                        </td>
+                                        <td> 
+                                            <img src={item.ejercicioPorMusculo.imagenEjercicio?.imagen} alt="Ejercicio" class="img-thumbnail"
+                                                width="70%"/>
+
+                                        </td>
+                                               
+                                        <td>
+                                            {item.ejercicioPorMusculo.series}
+                                        </td>
+                                        <td>
+                                            {item.ejercicioPorMusculo.repeticiones}
+                                        </td>
+                                        <td >
+                                            <p >
+                                                {item.ejercicioPorMusculo.tiempo_recomendado}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <a href={item.ejercicioPorMusculo.url} target="_blank" rel="noreferrer">
+                                                <button type="button" class="btn btn-primary">Ver</button>
+                                            </a>
+                                            
+                                        </td>
+                                        
+                                    </tr>
+                                </tbody>
+
+                            )
+                        })}
+                    </Table>
+
+                </Row>
+            </Container>
+
+        </Container>
+    );
+};
+
+export default RutinesSearch2;
