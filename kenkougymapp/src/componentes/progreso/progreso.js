@@ -66,6 +66,7 @@ var dataprogress
     
 }, []);
 dataprogress=progressdata
+var datalenght= dataprogress.length
 
 //brazo derecho
 var dtabrazoder=[]
@@ -172,6 +173,113 @@ const options = {
 }
 
 
+//segudno esquema
+//brazo derecho
+var ptebrazoder=[]
+for (let i = 0; i < dataprogress.length; i++) {
+  ptebrazoder.push({
+    x: new Date(dataprogress[i].fecha_inicial).getMonth(),
+    y: dataprogress[i].aumento_brazo_der
+  })
+}
+//brazo izq
+var ptebrazoizq=[]
+for (let i = 0; i < dataprogress.length; i++) {
+  ptebrazoizq.push({
+    x: new Date(dataprogress[i].fecha_inicial).getMonth(),
+    y: dataprogress[i].aumento_brazo_izq
+  })
+  
+}
+//pecho
+var ptepecho=[]
+for (let i = 0; i < dataprogress.length; i++) {
+  ptepecho.push({
+    x: new Date(dataprogress[i].fecha_inicial).getMonth(),
+    y: dataprogress[i].aumento_pecho
+  })
+  
+}
+//pierna izq
+var ptepiernaizq=[]
+for (let i = 0; i < dataprogress.length; i++) {
+  ptepiernaizq.push({
+    x: new Date(dataprogress[i].fecha_inicial).getMonth(),
+    y: dataprogress[i].aumento_pierna_izq
+  })
+  
+}
+// pierna der
+var ptepiernader=[]
+for (let i = 0; i < dataprogress.length; i++) {
+  dtapiernader.push({
+    x: new Date(dataprogress[i].fecha_inicial).getMonth(),
+    y: dataprogress[i].aumento_pierna_der
+  })
+  
+}
+//cuello LOL\
+var ptecuello=[]
+for (let i = 0; i < dataprogress.length; i++) {
+  ptecuello.push({
+    x: new Date(dataprogress[i].fecha_inicial).getMonth(),
+    y: dataprogress[i].aumento_cuello
+  })
+  
+}
+
+const options2 = {
+  animationEnabled: true,	
+  title:{
+    text: "Aumento de circunferencia"
+  },
+  axisY : {
+    title: "cm"
+  },
+  toolTip: {
+    shared: true
+  },
+  data: [{
+    type: "spline",
+    name: "Brazo Der",
+    showInLegend: true,
+    dataPoints: ptebrazoder
+  },
+  {
+    type: "spline",
+    name: "Brazo Izq",
+    showInLegend: true,
+    dataPoints: ptebrazoizq
+  },
+  {
+    type: "spline",
+    name: "Pecho",
+    showInLegend: true,
+    dataPoints: ptepecho
+  },
+  {
+    type: "spline",
+    name: "Cuello",
+    showInLegend: true,
+    dataPoints: ptecuello
+  },
+  {
+    type: "spline",
+    name: "Pierna Izq",
+    showInLegend: true,
+    dataPoints: ptepiernaizq
+  },
+  {
+    type: "spline",
+    name: "Pierna Der",
+    showInLegend: true,
+    dataPoints: ptepiernader
+  }
+  ]
+}
+
+
+
 
     return (
         <Container fluid='lg'>
@@ -201,15 +309,15 @@ const options = {
               <MDBCardBody className="p-0">
                 <MDBListGroup flush className="rounded-3">
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
+                    <MDBIcon fas icon=" fa-lg text-warning" />
                     <MDBCardText>{user.medidaAltura} m </MDBCardText>
                   </MDBListGroupItem>
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fab icon="github fa-lg" style={{ color: '#333333' }} />
+                    <MDBIcon fab icon=" fa-lg" style={{ color: '#333333' }} />
                     <MDBCardText>Peso           </MDBCardText>
                   </MDBListGroupItem>
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fab icon="instagram fa-lg" style={{ color: '#ac2bac' }} />
+                    <MDBIcon fab icon=" fa-lg" style={{ color: '#ac2bac' }} />
                     <MDBCardText>{user.sexo}</MDBCardText>
                   </MDBListGroupItem>
 
@@ -225,7 +333,7 @@ const options = {
                     <MDBCardText>Nombre Completo</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{tempData.firstName} {tempData.lastname}</MDBCardText>
+                    <MDBCardText className="text-muted">{user.firstName} {user.lastname}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -234,7 +342,7 @@ const options = {
                     <MDBCardText>Email</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{tempData.email}</MDBCardText>
+                    <MDBCardText className="text-muted">{user.email}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -252,7 +360,7 @@ const options = {
                     <MDBCardText>Fecha de Expiración</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{tempData.credentialsExpiration}</MDBCardText>
+                    <MDBCardText className="text-muted">{user.credentialsExpiration}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 
@@ -278,31 +386,28 @@ const options = {
               <MDBCol md="6">
                 <MDBCard className="mb-4 mb-md-0">
                   <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">assigment</span> Progreso de masa muscular</MDBCardText>
-                    <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Web Design</MDBCardText>
+                    {/* <MDBCardText className="mb-4"><span className="text-primary font-italic me-1"></span> Progreso de masa muscular en los ultimos {datalenght} meses</MDBCardText> */}
+                    <MDBCardText className="mb-4"> </MDBCardText>
+                    <CanvasJSChart options = {options2}
+				/* onRef={ref => this.chart = ref} */
+			              />
+                    {/* <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Aumento Brazos</MDBCardText>
                     <MDBProgress className="rounded">
-                      <MDBProgressBar width={80} valuemin={0} valuemax={100} />
+                      <MDBProgressBar width={90} valuemin={0} valuemax={100} />
                     </MDBProgress>
 
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Website Markup</MDBCardText>
+                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Aumento Pecho</MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={72} valuemin={0} valuemax={100} />
                     </MDBProgress>
 
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>One Page</MDBCardText>
+                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Aumento Piernas</MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={89} valuemin={0} valuemax={100} />
-                    </MDBProgress>
+                    </MDBProgress> */}
 
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Mobile Template</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={55} valuemin={0} valuemax={100} />
-                    </MDBProgress>
 
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Backend API</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={66} valuemin={0} valuemax={100} />
-                    </MDBProgress>
+
                   </MDBCardBody>
                 </MDBCard>
               </MDBCol>
