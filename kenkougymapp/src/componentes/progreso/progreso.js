@@ -314,7 +314,7 @@ const options2 = {
                   </MDBListGroupItem>
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                     <MDBIcon fab icon=" fa-lg" style={{ color: '#333333' }} />
-                    <MDBCardText>Peso           </MDBCardText>
+                    <MDBCardText>Peso 160lbs       </MDBCardText>
                   </MDBListGroupItem>
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                     <MDBIcon fab icon=" fa-lg" style={{ color: '#ac2bac' }} />
