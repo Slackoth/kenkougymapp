@@ -38,11 +38,11 @@ const Rutines = () => {
                     <Table striped bordered hover responsiver>
                         <thead >
                             <tr>
-                                <th scope="col">Rutina</th>
+                                <th scope="col-4">Rutina</th>
                                 <th className="col-4">Imagen</th>
-                                <th className="col">Objetivo</th>
-                                <th scope="col">Dificultad</th>
-                                <th scope="col-7">Músculo a trabajar</th>
+                                <th className="col-2">Dificultad</th>
+                                <th scope="col">Objetivo</th>
+                                <th scope="col-4">Músculo a trabajar</th>
                                 <th scope="col" >Instrucciones</th>
                             </tr>
                         </thead>
