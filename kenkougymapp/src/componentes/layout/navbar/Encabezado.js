@@ -12,6 +12,7 @@ const Encabezado = () => {
                         <Nav.Link href="/recipes">Recetas</Nav.Link>
                         <Nav.Link href="/rutines">Rutinas</Nav.Link>
                         <Nav.Link href="/">Objetivos Personales</Nav.Link>
+                        <Nav.Link href="/perfil">Perfil</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
