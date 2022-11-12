@@ -41,13 +41,13 @@ const RecipesSearch = () => {
                     <Table>
                         <thead className="thead-dark">
                             <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th className="col">Calorias</th>
-                                <th className="col">Proteinas</th>
-                                <th className="col">Grasa Saturada</th>
-                                <th className="col">Fibra</th>
-                                <th className="col">Carbohidratos</th>
+                                <th scope="col-2">ID</th>
+                                <th scope="col-4">Nombre</th>
+                                <th className="col-2">Calorias</th>
+                                <th className="col-2">Proteinas</th>
+                                <th className="col-2">Grasa Saturada</th>
+                                <th className="col-2">Fibra</th>
+                                <th className="col-2">Carbohidratos</th>
                             </tr>
                         </thead>
                         {tempData.map((item, index) => {

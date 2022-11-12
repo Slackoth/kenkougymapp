@@ -20,7 +20,6 @@ import Progreso from './componentes/progreso/progreso';
 import RutinesSearch from './componentes/rutines/RutinesSearch';
 import RutinesSearch2 from './componentes/rutines/RutinesSearch2';
 
-
 import RecipesKenkou from './componentes/recipes/RecipesKenkou';
 
 import Layout from './componentes/layout/Layout';
@@ -43,6 +42,7 @@ function App() {
         <Route path='/rutines' element={<Rutines/>}></Route>
         <Route path='/searchRutine' element={<RutinesSearch/>}></Route>
         <Route path='/searchRutine2' element={<RutinesSearch2/>}></Route>
+        <Route path='/recipesKenkou' element={<RecipesKenkou/>}></Route>
 
       </Routes>
     </Layout>
