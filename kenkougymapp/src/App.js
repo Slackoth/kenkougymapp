@@ -41,6 +41,8 @@ function App() {
         <Route path='/searchRecipe' element={<RecipesSearch/>}></Route>
         <Route path='/perfil' element={<Progreso/>}></Route>
         <Route path='/rutines' element={<Rutines/>}></Route>
+        <Route path='/searchRutine' element={<RutinesSearch/>}></Route>
+        <Route path='/searchRutine2' element={<RutinesSearch2/>}></Route>
 
       </Routes>
     </Layout>

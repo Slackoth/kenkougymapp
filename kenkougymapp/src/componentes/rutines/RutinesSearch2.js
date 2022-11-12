@@ -47,10 +47,10 @@ const RutinesSearch2 = () => {
                         <thead >
                             <tr>
                                 <th scope="col">Músculo</th>
-                                <th scope="col">Ejercicio</th>
-                                <th className="col-4">Imagen</th>
-                                <th className="col">Series</th>
-                                <th className="col">Repeticiones</th>
+                                <th scope="col-4">Ejercicio</th>
+                                <th className="col-6">Imagen</th>
+                                <th className="col-2">Series</th>
+                                <th className="col-2">Repeticiones</th>
                                 <th className="col">Tiempo recomendado</th>
                                 <th className="col">Video Tutorial</th>
                                 
