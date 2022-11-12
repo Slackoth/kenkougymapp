@@ -40,12 +40,12 @@ const RecipesKenkou = () => {
                     <Table>
                         <thead className="thead-dark">
                             <tr>
-                                <th scope="col">ID</th>
-                                <th className="col">Nombre</th>
-                                <th className="co">Tutorial</th>
+                                <th scope="col-1">ID</th>
+                                <th className="col-1">Nombre</th>
+                                <th className="col-1">Tutorial</th>
                                 <th className="col-7">Instrucciones</th>
-                                <th className='col'>Objetivo</th>
-                                <th className='col'>Tiempo</th>
+                                <th className='col-2'>Objetivo</th>
+                                <th className='col-1'>Tiempo</th>
                                 <th className='col-3'>Ingredientes</th>
                                 <th className='col-3'>Tabla Nutricional</th>
                             </tr>
