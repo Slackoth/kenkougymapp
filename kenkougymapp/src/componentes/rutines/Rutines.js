@@ -43,7 +43,7 @@ const Rutines = () => {
                         setSearchTerm(e.target.value);
                     }} />
                     <table className="table table-bordered responsive" >
-                        <thead >
+                        <thead className="thead-dark">
                             <tr>
                                 <th scope="col-4">Rutina</th>
                                 <th className="col-4">Imagen</th>

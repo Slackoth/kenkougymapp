@@ -47,7 +47,7 @@ const RutinesSearch = () => {
                     }} />
 
                     <table className="table table-bordered responsive">
-                        <thead >
+                        <thead className="thead-dark" >
                             <tr>
                             <th scope="col">Músculo</th>
                                 <th scope="col-4">Ejercicio</th>
