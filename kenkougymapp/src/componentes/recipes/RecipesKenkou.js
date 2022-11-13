@@ -8,6 +8,7 @@ const RecipesKenkou = () => {
     const [model, setModel] = useState(false);
     const [tempData, setTempData] = useState([]);
     const [tempName, setName] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         //Axios.get()
@@ -35,9 +36,11 @@ const RecipesKenkou = () => {
 
             <Container fluid='lg'>
                 <Row>
+                <input type="text" clasName="form-control" style={{marginTop:50, marginBottom:20, width:"40%"}} placeholder="Buscar..."  onChange= {(e) =>{
+                        setSearchTerm(e.target.value);
+                    }} />
 
-
-                    <Table>
+                    <table className="table table-bordered responsive">
                         <thead className="thead-dark">
                             <tr>
                                 <th scope="col-1">ID</th>
@@ -50,9 +53,26 @@ const RecipesKenkou = () => {
                                 <th className='col-3'>Tabla Nutricional</th>
                             </tr>
                         </thead>
-                        {tempData.map((item, index) => {
+                        <tbody>
+                        {tempData.filter((val)=>{
+                           if(searchTerm == ""){
+                            return val;
+                            }
+                            else if(
+                                val.nombre.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                val.instrucciones.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                val.objetivo.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                val.tiempoComida.nombre.toLowerCase().includes(searchTerm.toLowerCase)
+                                )
+                            {
+                                return val;
+                            }
+
+                        }
+
+                        ).map((item, index) => {
                             return (
-                                <tbody>
+                                
                                     <tr key={index}>
                                         <td>
                                             {item.id}
@@ -103,11 +123,12 @@ const RecipesKenkou = () => {
                                             </li>
                                         </td>
                                     </tr>
-                                </tbody>
+                                
 
                             )
                         })}
-                    </Table>
+                        </tbody>
+                    </table>
 
                 </Row>
             </Container>
