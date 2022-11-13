@@ -8,7 +8,7 @@ const Recipes = () => {
 
     const [model, setModel] = useState(false);
     const [tempData, setTempData] = useState([]);
-
+    const [searchTerm, setSearchTerm] = useState("");
 
     const getData = (nombre, img, desc) => {
         let tempData = [nombre, img, desc];
@@ -43,7 +43,10 @@ const Recipes = () => {
             </Row>
             <Container fluid='lg'>
                 <Row>
-                    <Table>
+                <input type="text" clasName="form-control" style={{marginTop:50, marginBottom:20, width:"40%"}} placeholder="Buscar..."  onChange= {(e) =>{
+                        setSearchTerm(e.target.value);
+                    }} />
+                    <table className="table table-bordered responsive" >
                         <thead className="thead-dark">
                             <tr>
                                 <th scope="col">Nombre</th>
@@ -51,23 +54,36 @@ const Recipes = () => {
                                 <th className="col-7">Descripción</th>
                             </tr>
                         </thead>
-                        {recipesData.cardRecipes.map((item, index) => {
+                        <tbody>
+                        {recipesData.cardRecipes.filter((val)=>{
+                            if(searchTerm == ""){
+                                return val;
+                            }
+                            else if(
+                                val.nombre.toLowerCase().includes(searchTerm.toLowerCase()) 
+                                
+                                )
+                            {
+                                return val;
+                            }
+                        }).map((item, index) => {
                             return (
 
-                                <tbody>
+                                
                                     <tr key={index}>
                                         <td> {item.nombre} </td>
                                         <td>
-                                            <img src={item.img} alt="vegetarianos" class="img-thumbnail"
+                                            <img src={item.img} alt="vegetarianos" className="img-thumbnail"
                                                 width="70%" />
                                         </td>
                                         <td> {item.desc} </td>
                                     </tr>
-                                </tbody>
+                                
 
                             )
                         })}
-                    </Table>
+                        </tbody>
+                    </table>
                 </Row>
             </Container>
 

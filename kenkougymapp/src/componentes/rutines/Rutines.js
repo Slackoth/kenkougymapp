@@ -1,16 +1,14 @@
-import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {  Container,  Row  } from 'react-bootstrap';
+
 import cub1 from '../imagenes/menu/cubo1.jpg';
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import RutinesSearch from './RutinesSearch';
-
-import rutinesData from '../rutines/dataRutines';
 
 
 const Rutines = () => {
 
     const [tempData, setTempData] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         //Axios.get()
@@ -35,8 +33,14 @@ const Rutines = () => {
             </Row>
             <Container fluid='lg'>
                 <Row>
-                    <Table striped bordered hover responsiver>
-                        <thead >
+                    {/*Crear un formulario con un botón */}
+
+
+                    <input type="text" clasName="form-control" style={{marginTop:50, marginBottom:20, width:"40%"}} placeholder="Buscar..."  onChange= {(e) =>{
+                        setSearchTerm(e.target.value);
+                    }} />
+                    <table className="table table-bordered responsive" >
+                        <thead className="thead-dark">
                             <tr>
                                 <th scope="col-4">Rutina</th>
                                 <th className="col-4">Imagen</th>
@@ -46,15 +50,29 @@ const Rutines = () => {
                                 <th scope="col" >Instrucciones</th>
                             </tr>
                         </thead>
-                        {tempData.map((item, index) => {
+                        <tbody>
+                        {tempData.filter((val)=>{
+                            if(searchTerm === ""){
+                                return val;
+                            }
+                            else if(
+                                val.musculo_a_trabajar.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                val.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                val.dificultad.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                val.objetivo.toLowerCase().includes(searchTerm.toLowerCase())
+                                )
+                            {
+                                return val;
+                            }
+                        }).map((item, index) => {
                             return (
-                                <tbody>
+                                
                                     <tr key={index}>
                                         <td>
                                             {item.nombre}
                                         </td>
                                         <td> 
-                                            <img src={item.imagen} alt="Ejercicio" class="img-thumbnail"
+                                            <img src={item.imagen} alt="Ejercicio" className="img-thumbnail"
                                                 width="70%"/>
 
                                         </td>
@@ -72,18 +90,19 @@ const Rutines = () => {
                                         
                                         <td>
                                             {/*Crear boton que me dirija a RutineSearch.js*/}
-                                            <a href={item.instrucciones} target="_blank" rel="noreferrer" class="btn btn-primary">Instrucciones</a>
+                                            <a href={item.instrucciones} target="_blank" rel="noreferrer" className="btn btn-primary">Instrucciones</a>
                                            
                                             
                                             
                                         </td>
                                         
                                     </tr>
-                                </tbody>
+                                
 
                             )
                         })}
-                    </Table>
+                        </tbody>
+                    </table>
                 </Row>
             </Container>
 

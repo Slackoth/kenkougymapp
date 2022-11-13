@@ -22,6 +22,7 @@ import RutinesSearch2 from './componentes/rutines/RutinesSearch2';
 
 import RecipesKenkou from './componentes/recipes/RecipesKenkou';
 
+
 import Layout from './componentes/layout/Layout';
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
         <Route path='/login' element={<LoginForm/>}></Route>
         <Route path='/menu' element={<Menu/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
+
+
+        
         
         <Route path='/breakfast' element={<Breakfast/>}></Route>
         <Route path='/dinner' element={<Dinner/>}></Route>
