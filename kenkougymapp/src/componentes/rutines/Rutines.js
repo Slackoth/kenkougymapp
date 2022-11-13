@@ -1,11 +1,8 @@
-import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {  Container,  Row  } from 'react-bootstrap';
+
 import cub1 from '../imagenes/menu/cubo1.jpg';
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import RutinesSearch from './RutinesSearch';
-
-import rutinesData from '../rutines/dataRutines';
 
 
 const Rutines = () => {
@@ -55,7 +52,7 @@ const Rutines = () => {
                         </thead>
                         <tbody>
                         {tempData.filter((val)=>{
-                            if(searchTerm == ""){
+                            if(searchTerm === ""){
                                 return val;
                             }
                             else if(

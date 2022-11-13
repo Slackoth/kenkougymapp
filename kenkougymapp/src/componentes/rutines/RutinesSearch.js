@@ -1,10 +1,10 @@
-import { Button, Col, Container, Form, Row, Table, Carousel } from 'react-bootstrap';
+import { Col,   Container,  Row   } from 'react-bootstrap';
 
 
-import cub2 from '../imagenes/menu/cubo1.jpg';
+
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import cub3 from "../imagenes/rutines/predicador.jpg";
+
 
 
 const RutinesSearch = () => {
@@ -36,7 +36,7 @@ const RutinesSearch = () => {
         <Container fluid='lg'>
             <Row className="justify-content-center">
                 <Col md={3} className="text-center text-md">
-                    <img src="https://drive.google.com/uc?export=view&id=1ah7hvtjuZ6XB-iHLIzR59HEN4BOlJTGr"  width='250px' height='150px'  />
+                    <img src="https://drive.google.com/uc?export=view&id=1ah7hvtjuZ6XB-iHLIzR59HEN4BOlJTGr" alt=""  width='250px' height='150px'  />
                 </Col>
             </Row>
 
@@ -61,7 +61,7 @@ const RutinesSearch = () => {
                         </thead>
                         <tbody>
                         {tempData.filter((val)=>{
-                            if(searchTerm == ""){
+                            if(searchTerm === ""){
                                 return val;
                             }
                             else if(
