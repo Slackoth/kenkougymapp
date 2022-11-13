@@ -10,7 +10,7 @@ import cub3 from "../imagenes/rutines/predicador.jpg";
 const RutinesSearch2 = () => {
 
     const [tempData, setTempData] = useState([]);
-
+    const [searchTerm, setSearchTerm] = useState("");
     useEffect(() => {
         //Axios.get()
         const getData = async () => {
@@ -40,13 +40,15 @@ const RutinesSearch2 = () => {
             </Row>
 
             <Container fluid='lg'>
-                <Row>
-                    
+            <Row>
+                <input type="text" clasName="form-control" style={{marginTop:50, marginBottom:20, width:"40%"}} placeholder="Buscar..."  onChange= {(e) =>{
+                        setSearchTerm(e.target.value);
+                    }} />
 
-                    <Table striped bordered hover responsive>
+                    <table className="table table-bordered responsive">
                         <thead >
                             <tr>
-                                <th scope="col">Músculo</th>
+                            <th scope="col">Músculo</th>
                                 <th scope="col-4">Ejercicio</th>
                                 <th className="col-6">Imagen</th>
                                 <th className="col-2">Series</th>
@@ -56,9 +58,22 @@ const RutinesSearch2 = () => {
                                 
                             </tr>
                         </thead>
-                        {tempData.map((item, index) => {
+                        <tbody>
+                        {tempData.filter((val)=>{
+                            if(searchTerm == ""){
+                                return val;
+                            }
+                            else if(
+                                val.ejercicioPorMusculo.musculo.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                val.ejercicioPorMusculo.ejercicio.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+                               
+                                )
+                            {
+                                return val;
+                            }
+                        }).map((item, index) => {
                             return (
-                                <tbody>
+                                
                                     <tr key={index}>
                                         <td>
                                             {item.ejercicioPorMusculo.musculo?.nombre}
@@ -67,7 +82,7 @@ const RutinesSearch2 = () => {
                                             {item.ejercicioPorMusculo.ejercicio?.nombre}
                                         </td>
                                         <td> 
-                                            <img src={item.ejercicioPorMusculo.imagenEjercicio?.imagen} alt="Ejercicio" class="img-thumbnail"
+                                            <img src={item.ejercicioPorMusculo.imagenEjercicio?.imagen} alt="Ejercicio" className="img-thumbnail"
                                                 width="70%"/>
 
                                         </td>
@@ -85,17 +100,18 @@ const RutinesSearch2 = () => {
                                         </td>
                                         <td>
                                             <a href={item.ejercicioPorMusculo.url} target="_blank" rel="noreferrer">
-                                                <button type="button" class="btn btn-primary">Ver</button>
+                                                <button type="button" className="btn btn-primary">Ver</button>
                                             </a>
                                             
                                         </td>
                                         
                                     </tr>
-                                </tbody>
+                               
 
                             )
                         })}
-                    </Table>
+                         </tbody>
+                    </table>
 
                 </Row>
             </Container>
