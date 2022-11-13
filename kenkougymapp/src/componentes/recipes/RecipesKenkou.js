@@ -89,7 +89,10 @@ const RecipesKenkou = () => {
                                             </Button>
                                         </td>
                                         <td>
-                                            {item.instrucciones}
+                                            <div
+                                            dangerouslySetInnerHTML={{__html: item.instrucciones}}
+                                            />
+                                            {/* {item.instrucciones} */}
                                         </td>
                                         <td>
                                             {item.objetivo.nombre}
