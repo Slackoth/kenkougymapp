@@ -36,7 +36,7 @@ const RecipesKenkou = () => {
 
             <Container fluid='lg'>
                 <Row>
-                <input type="text" clasName="form-control" style={{marginTop:50, marginBottom:20, width:"40%"}} placeholder="Buscar..."  onChange= {(e) =>{
+                <input type="text" className="form-control" style={{marginTop:50, marginBottom:20, width:"40%"}} placeholder="Buscar..."  onChange= {(e) =>{
                         setSearchTerm(e.target.value);
                     }} />
 
