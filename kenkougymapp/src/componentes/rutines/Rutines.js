@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import cub1 from "../imagenes/menu/cubo1.jpg";
 import React, { useState, useEffect } from "react";
 import { MDBInput } from "mdb-react-ui-kit";
+import ban1 from '../imagenes/banner/banner4.jpg';
 import Axios from "axios";
 import "../layout/navbar/nav.css";
 
@@ -26,9 +27,16 @@ const Rutines = () => {
   return (
     <Container fluid="lg">
       <Row>
-        <div id="cubo1" className="justify-content-center text-center">
-          <img src={cub1} width="250px" height="150px" alt="..." />
+        <div id="cubo1" className="justify-content-center text-center pb-4" >
+          <img src={ban1} width="100%" height="380px" alt="..." />
         </div>
+        <p className='text-center fs-1 pb-1 pt-2 pr-4 pl-4'>
+                <strong>Rutinas</strong>
+            </p>
+
+            <p className='text-center fs-5 pb-0 pt-1 pr-4 pl-4'>
+                En esta sección encontrarás las rutinas que hemos preparado para ti, para que puedas realizarlas en casa o en el gimnasio
+            </p>
       </Row>
       <Container fluid="lg">
         <Row>

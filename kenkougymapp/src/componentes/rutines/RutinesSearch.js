@@ -23,14 +23,11 @@ const RutinesSearch = () => {
   return (
     <Container fluid="lg">
       <Row className="justify-content-center">
-        <Col md={3} className="text-center text-md">
-          <img
-            src="https://drive.google.com/uc?export=view&id=1ah7hvtjuZ6XB-iHLIzR59HEN4BOlJTGr"
-            alt=""
-            width="250px"
-            height="150px"
-          />
-        </Col>
+        
+      <p className='text-center fs-1 pb-0 pt-4 pr-4 pl-4'>
+                <strong>Ejercicios</strong>
+            </p>
+         
       </Row>
 
       <Container fluid="lg">

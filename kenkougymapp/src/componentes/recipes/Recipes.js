@@ -3,6 +3,7 @@ import cub2 from "../imagenes/menu/cubo2.jpg";
 import React, { useState } from "react";
 import recipesData from "../recipes/data/dataRecipes";
 import ModelTiming from "../recipes/modalTiming";
+import ban4 from '../imagenes/banner/banner7.jpg';
 import { MDBInput } from "mdb-react-ui-kit";
 
 const Recipes = () => {
@@ -19,8 +20,20 @@ const Recipes = () => {
   return (
     <Container fluid="lg">
       <Row className="justify-content-center">
+      <Row>
+        <div id="cubo1" className="justify-content-center text-center pb-4" >
+          <img src={ban4} width="100%" height="380px" alt="..." />
+        </div>
+        <p className='text-center fs-1 pb-1 pt-2 pr-4 pl-4'>
+                <strong>Recetas</strong>
+            </p>
+
+            <p className='text-center fs-5 pb-0 pt-1 pr-4 pl-4'>
+                Aquí se te presentan diferentes recetas para  preparar en casa, logrando complementar tu dieta y estar más cerca de tus objetivos
+            </p>
+      </Row>
         <Col md={3} className="text-center text-md">
-          <img src={cub2} width="250px" height="150px" alt="..." />
+          
           <Button variant="outline-warning" size="sm" href="Ingredients">
             Alimentos Cotidianos
           </Button>
