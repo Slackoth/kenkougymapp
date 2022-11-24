@@ -11,7 +11,7 @@ const RutinesSearch = () => {
     //Axios.get()
     const getData = async () => {
       const url =
-        "http://147.182.214.93:8080/kenkou-gym-api/ejercicios/ejercicioPorRutinaPorId?idRutina=1";
+        "http://localhost:8080/kenkou-gym-api/ejercicios/ejercicioPorRutinaPorId?idRutina=1";
       const { data } = await Axios.get(url);
       console.log(data);
 

@@ -38,7 +38,7 @@ const Progreso = () => {
       //Axios.get()
       const getData = async () => {
 
-          const url = "http://147.182.214.93:8080/kenkou-gym-api/usuario/obtenerUsuario?username=00082318";
+          const url = "http://localhost:8080/kenkou-gym-api/usuario/obtenerUsuario?username=00082318";
           const { data } = await Axios.get(url);
           console.log(data);
           user=data
@@ -56,7 +56,7 @@ var dataprogress
     //Axios.get()
     const getDataprogreso = async () => {
 
-        const url = "http://147.182.214.93:8080/kenkou-gym-api/usuario/obtenerProgreso?username=00082318&fechaActual=05%2F09%2F2022&fechaInicial=01%2F01%2F2022";
+        const url = "http://localhost:8080/kenkou-gym-api/usuario/obtenerProgreso?username=00082318&fechaActual=05%2F09%2F2022&fechaInicial=01%2F01%2F2022";
         const { data } = await Axios.get(url);
         console.log(data);
         dataprogress=data;

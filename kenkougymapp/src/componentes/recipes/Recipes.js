@@ -1,6 +1,7 @@
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import cub2 from "../imagenes/menu/cubo2.jpg";
 import React, { useState } from "react";
+import {NavLink} from "react-router-dom";
 import recipesData from "../recipes/data/dataRecipes";
 import ModelTiming from "../recipes/modalTiming";
 import ban4 from '../imagenes/banner/banner7.jpg';
@@ -33,16 +34,20 @@ const Recipes = () => {
             </p>
       </Row>
         <Col md={3} className="text-center text-md">
-          
-          <Button variant="outline-warning" size="sm" href="Ingredients">
+          <NavLink to="/Ingredients">
+          <Button variant="primary" size="sm" >
             Alimentos Cotidianos
           </Button>
-          <Button variant="outline-danger" size="sm" href="/searchRecipe">
+          </NavLink>
+          <NavLink to="/searchRecpe">
+          <Button variant="primary" size="sm" >
             Ingredientes de Nuestras Recetas
-          </Button>
-          <Button variant="outline-success" size="sm" href="/recipesKenkou">
+          </Button></NavLink>
+          <NavLink to ="/recipesKenkou">
+          <Button variant="primary" size="sm" >
             Ver Recetario
           </Button>
+          </NavLink>
         </Col>
       </Row>
       <Container fluid="lg">
